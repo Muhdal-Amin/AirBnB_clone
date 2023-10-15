@@ -23,5 +23,5 @@ class test_City(unittest.TestCase):
         new = self.value()
         self.assertTrue(hasattr(new, "state_id"))
         self.assertTrue(hasattr(new, "name"))
-        self.assertTrue(type(new.state_id),str)
-        self.assertTrue(type(new.name),str)
+        self.assertTrue(type(new.state_id), str)
+        self.assertTrue(type(new.name), str)
