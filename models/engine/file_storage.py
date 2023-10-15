@@ -4,7 +4,6 @@ import datetime
 import json
 import os
 
-
 class FileStorage:
 
     """Class for storing and retrieving data"""
@@ -23,7 +22,7 @@ class FileStorage:
     def save(self):
         """serializes __objects to the JSON __file_path"""
         dictObj = {}
-        for key, val in FileStorage.__object.items():
+        for key, val in FileStorage.__objects.items():
             dictObj[key] = val.to_dict()
             with open(FileStorage.__file_path, "w", encoding="utf-8") as jsonF:
                 json.dump(dictObj, jsonF)
@@ -38,7 +37,7 @@ class FileStorage:
         from models.place import Place
         from models.review import Review
 
-        classes = {"BaseModel": BaseModel,
+        definedclasses = {"BaseModel": BaseModel,
                           "User": User,
                           "State": State,
                           "City": City,
@@ -48,15 +47,36 @@ class FileStorage:
 
         try:
             with open(FileStorage.__file_path, "r", encoding="utf-8") as jsonF:
-                deserialised_obj = load(jsonF)
+                deserialized_obj = json.load(jsonF)
                 for obj_values in deserialized_obj.values():
                     className = obj_values["__class__"]
-                    class_obj = classes[className]
+                    class_obj = definedclasses[className]
                     self.new(class_obj(**obj_values))
 
         except FileNotFoundError:
             pass
 
+    def classes(self):
+        """Returns a dictionary of available classes"""
+
+        from models.base_model import BaseModel
+        from models.user import User
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.place import Place
+        from models.review import Review
+
+        class_dict = {
+            "BaseModel": BaseModel,
+            "User": User,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Place": Place,
+            "Review": Review
+        }
+        return class_dict
 
     def attributes(self):
         """Returns the valid attributes and their types for classname"""
