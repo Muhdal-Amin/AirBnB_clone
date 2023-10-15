@@ -4,6 +4,7 @@ import datetime
 import json
 import os
 
+
 class FileStorage:
 
     """Class for storing and retrieving data"""
@@ -15,7 +16,7 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        """sets the key-value pair in __objects (class.id as key, obj as val)"""
+        """sets the key-val pair in __objects (class.id as key, obj as val)"""
         keyFormat = "{}.{}".format(type(obj).__name__, obj.id)
         FileStorage.__objects[keyFormat] = obj
 

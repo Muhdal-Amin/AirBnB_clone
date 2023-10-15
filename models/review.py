@@ -5,8 +5,8 @@ from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-        """This class inherits from the BaseModel to manage review objects"""
+    """This class inherits from the BaseModel to manage review objects"""
 
-        place_id = ""
-        user_id = ""
-        text = ""
+    place_id = ""
+    user_id = ""
+    text = ""
