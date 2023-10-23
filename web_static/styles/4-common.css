@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
       margin: 0;
       padding: 0;
@@ -8,4 +9,19 @@ body {
 .container {
       max-width: 1000px;
       margin: 30px auto;
+=======
+body{
+	margin: 0;
+    padding: 0;
+    color: #484848;
+    font-size: 14px;
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+
+.container{
+    margin: auto;
+    max-width: 1000px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+>>>>>>> eda6cc55b642eb2fe39d595a9382a66f1132e154
 }

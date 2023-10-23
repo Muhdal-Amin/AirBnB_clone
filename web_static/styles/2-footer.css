@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 footer {
       background-color: #00ff00;
       height: 60px;
@@ -8,3 +9,15 @@ footer {
       justify-content: center;
       line-height: 60px;
 }
+=======
+footer{
+    Background-color:#00FF00;
+    height:60px;
+    width:100%;
+    position: absolute;
+    bottom:0;
+    text-align:center;
+    line-height:60px
+}
+
+>>>>>>> eda6cc55b642eb2fe39d595a9382a66f1132e154
